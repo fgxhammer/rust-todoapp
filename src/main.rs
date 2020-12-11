@@ -26,6 +26,12 @@ impl TodoList {
     fn add_to_list(&mut self, name: String) {
         self.list.push(TodoItem::new(name))
     }
+
+    fn print(&self) {
+        for item in &self.list {
+            println!("[{}] - {}", item.completed, item.name)
+        }
+    }
 }
 
 
@@ -39,8 +45,6 @@ fn main() {
     todo_list.add_to_list("Say Bye!".to_string());
 
     if command == "get" {
-        for todo in todo_list.list {
-            println!("[{}] - {}", todo.completed, todo.name)
-        }
+        todo_list.print()
     }
 }
