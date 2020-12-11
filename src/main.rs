@@ -46,5 +46,10 @@ fn main() {
 
     if command == "get" {
         todo_list.print()
+    } else if command == "add" {
+        let task = arguments[2].clone();
+        todo_list.add_to_list(task);
+        todo_list.print();
     }
+
 }
